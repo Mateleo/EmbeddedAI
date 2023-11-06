@@ -3,3 +3,6 @@ numpy
 torchvision
 matplotlib
 tqdm
+torchsummary
+pandas
+SimpleITK
