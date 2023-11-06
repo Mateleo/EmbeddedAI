@@ -1,6 +1,6 @@
-torch
+# torch
 numpy
-torchvision
+# torchvision
 matplotlib
 tqdm
 torchsummary
