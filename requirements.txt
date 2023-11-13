@@ -6,3 +6,6 @@ tqdm
 torchsummary
 pandas
 SimpleITK
+tensorboard
+scikit-learn
+opencv-python

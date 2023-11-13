@@ -2,3 +2,6 @@ env
 data
 *.pth
 content
+lab5_data
+lab3_data
+lab7_data
