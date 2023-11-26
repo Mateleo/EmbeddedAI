@@ -1,0 +1,33 @@
+strict digraph  {
+"0 /nncf_model_input_0";
+"1 CNN/Sequential[CNN]/NNCFConv2d[0]/conv2d_0";
+"2 CNN/Sequential[CNN]/NNCFBatchNorm2d[1]/batch_norm_0";
+"3 CNN/Sequential[CNN]/ReLU[2]/relu_0";
+"4 CNN/Sequential[CNN]/MaxPool2d[3]/max_pool2d_0";
+"5 CNN/Sequential[CNN]/NNCFConv2d[4]/conv2d_0";
+"6 CNN/Sequential[CNN]/NNCFBatchNorm2d[5]/batch_norm_0";
+"7 CNN/Sequential[CNN]/ReLU[6]/relu_0";
+"8 CNN/Sequential[CNN]/MaxPool2d[7]/max_pool2d_0";
+"9 CNN/Sequential[CNN]/NNCFConv2d[8]/conv2d_0";
+"10 CNN/Sequential[CNN]/NNCFBatchNorm2d[9]/batch_norm_0";
+"11 CNN/Sequential[CNN]/ReLU[10]/relu_0";
+"12 CNN/Sequential[classification_head]/Flatten[0]/flatten_0";
+"13 CNN/Sequential[classification_head]/NNCFLinear[1]/linear_0";
+"14 CNN/Sequential[classification_head]/Softmax[2]/softmax_0";
+"15 /nncf_model_output_0";
+"0 /nncf_model_input_0" -> "1 CNN/Sequential[CNN]/NNCFConv2d[0]/conv2d_0"  [label="(32, 1, 28, 28) \n0 -> 0", style=solid];
+"1 CNN/Sequential[CNN]/NNCFConv2d[0]/conv2d_0" -> "2 CNN/Sequential[CNN]/NNCFBatchNorm2d[1]/batch_norm_0"  [label="(32, 32, 28, 28) \n0 -> 0", style=solid];
+"2 CNN/Sequential[CNN]/NNCFBatchNorm2d[1]/batch_norm_0" -> "3 CNN/Sequential[CNN]/ReLU[2]/relu_0"  [label="(32, 32, 28, 28) \n0 -> 0", style=solid];
+"3 CNN/Sequential[CNN]/ReLU[2]/relu_0" -> "4 CNN/Sequential[CNN]/MaxPool2d[3]/max_pool2d_0"  [label="(32, 32, 28, 28) \n0 -> 0", style=solid];
+"4 CNN/Sequential[CNN]/MaxPool2d[3]/max_pool2d_0" -> "5 CNN/Sequential[CNN]/NNCFConv2d[4]/conv2d_0"  [label="(32, 32, 14, 14) \n0 -> 0", style=solid];
+"5 CNN/Sequential[CNN]/NNCFConv2d[4]/conv2d_0" -> "6 CNN/Sequential[CNN]/NNCFBatchNorm2d[5]/batch_norm_0"  [label="(32, 64, 14, 14) \n0 -> 0", style=solid];
+"6 CNN/Sequential[CNN]/NNCFBatchNorm2d[5]/batch_norm_0" -> "7 CNN/Sequential[CNN]/ReLU[6]/relu_0"  [label="(32, 64, 14, 14) \n0 -> 0", style=solid];
+"7 CNN/Sequential[CNN]/ReLU[6]/relu_0" -> "8 CNN/Sequential[CNN]/MaxPool2d[7]/max_pool2d_0"  [label="(32, 64, 14, 14) \n0 -> 0", style=solid];
+"8 CNN/Sequential[CNN]/MaxPool2d[7]/max_pool2d_0" -> "9 CNN/Sequential[CNN]/NNCFConv2d[8]/conv2d_0"  [label="(32, 64, 7, 7) \n0 -> 0", style=solid];
+"9 CNN/Sequential[CNN]/NNCFConv2d[8]/conv2d_0" -> "10 CNN/Sequential[CNN]/NNCFBatchNorm2d[9]/batch_norm_0"  [label="(32, 128, 5, 5) \n0 -> 0", style=solid];
+"10 CNN/Sequential[CNN]/NNCFBatchNorm2d[9]/batch_norm_0" -> "11 CNN/Sequential[CNN]/ReLU[10]/relu_0"  [label="(32, 128, 5, 5) \n0 -> 0", style=solid];
+"11 CNN/Sequential[CNN]/ReLU[10]/relu_0" -> "12 CNN/Sequential[classification_head]/Flatten[0]/flatten_0"  [label="(32, 128, 5, 5) \n0 -> 0", style=solid];
+"12 CNN/Sequential[classification_head]/Flatten[0]/flatten_0" -> "13 CNN/Sequential[classification_head]/NNCFLinear[1]/linear_0"  [label="(32, 3200) \n0 -> 0", style=solid];
+"13 CNN/Sequential[classification_head]/NNCFLinear[1]/linear_0" -> "14 CNN/Sequential[classification_head]/Softmax[2]/softmax_0"  [label="(32, 10) \n0 -> 0", style=solid];
+"14 CNN/Sequential[classification_head]/Softmax[2]/softmax_0" -> "15 /nncf_model_output_0"  [label="(32, 10) \n0 -> 0", style=solid];
+}

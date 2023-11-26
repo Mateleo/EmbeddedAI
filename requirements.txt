@@ -1,6 +1,6 @@
-# torch
+torch
 numpy
-# torchvision
+torchvision
 matplotlib
 tqdm
 torchsummary
@@ -9,3 +9,6 @@ SimpleITK
 tensorboard
 scikit-learn
 opencv-python
+openvino
+nncf
+scipy==1.11.3
